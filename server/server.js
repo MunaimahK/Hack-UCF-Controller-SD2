@@ -46,7 +46,7 @@ try {
   handleError(error);
 }
 
-app.use("/", require("./Routes/LoginOut"));
+app.use("/", require("./Routes/routes"));
 
 app.listen(8000, function(err) {
   if (err) console.log(err);

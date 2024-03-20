@@ -1,7 +1,7 @@
-const User = require("../Models/AdminSchema");
-const clubMember = require("../Models/user-model");
+const User = require("../Models/AdminSchema.js");
+const clubMember = require("../Models/user-model.js");
 const Admin = require("../Models/admin-model.js");
-const { hashPwd, comparePwd } = require("../helpers/auth");
+const { hashPwd, comparePwd } = require("../helpers/auth.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv");
@@ -64,6 +64,7 @@ const firstTimeQ = async (req, res) => {
       major,
       gradDate,
       clubName,
+      customQ: [],
     });
 
     (await user).save();
@@ -286,6 +287,15 @@ const authenticate = async (req, res, next) => {
     }
   }
 };
+
+const customQ = async (req, res) => {
+  return res.json({ error: true });
+
+  /*custom q:
+
+  Software Development Experience (1/2/3/4/5) [How much do you know about software development?]
+  */
+};
 module.exports = {
   test,
   register,
@@ -297,4 +307,5 @@ module.exports = {
   updateQR,
   defaultAdmin,
   Logout,
+  customQ,
 };

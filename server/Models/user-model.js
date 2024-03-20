@@ -10,12 +10,8 @@ const clubMember = new mongoose.Schema(
     qrcodeURL: String,
     customQ: [
       {
-        returning: Boolean,
-        minecraft: String,
-        gender: String,
-        major: String,
-        classStanding: Number,
-        shirtSize: String,
+        question: String,
+        answer: String,
       },
     ],
   },

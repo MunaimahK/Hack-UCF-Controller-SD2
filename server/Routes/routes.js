@@ -11,7 +11,8 @@ const {
   updateQR,
   defaultAdmin,
   Logout,
-} = require("../Controllers/authController.js");
+  customQ,
+} = require("../Controllers/controllers.js");
 
 router.use(
   cors({
@@ -47,4 +48,5 @@ router.get("/one-time-signup-server", firstTimeQ);
 router.get("/updateQR", updateQR);
 router.get("/admin/default", defaultAdmin);
 router.get("/logout", Logout);
+router.get("/custom-questions", customQ);
 module.exports = router;
