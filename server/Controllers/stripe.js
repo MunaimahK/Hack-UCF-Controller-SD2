@@ -1,6 +1,5 @@
-const stripe = require("stripe")(
-  "sk_test_51OYvMuKUjwOMdwQrKj0XiNdeQBfUVO3eN8TrmPkEBoulsYGtYpyvf4lGnZft9Xl88rwvj4N0q82h8KjfmZXyC3nU00gLS8bldQ"
-);
+require("dotenv").config();
+const stripe = require("stripe")(process.env.stripe);
 /*
 const express = require("express");
 const app = express();
