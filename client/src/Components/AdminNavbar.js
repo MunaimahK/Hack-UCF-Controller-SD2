@@ -3,13 +3,20 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { useState } from "react";
-const Navbar = (props) => {
-  const title = "Hack@UCF";
+import axios from "axios";
+const AdminNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const logout = async (req, res) => {
+    try {
+      const data = await axios.get("/logout");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <nav>
       <Link className="title" to="/">
-        UCF | {title}{" "}
+        UCF | Hack@UCF{" "}
       </Link>
       <div
         className="menu"
@@ -26,20 +33,16 @@ const Navbar = (props) => {
           <NavLink to="http://localhost:3000/dashboard">Influx</NavLink>
         </li>
         <li>
-          <NavLink to="/pay/dues/Stripe">Pay Dues</NavLink>
+          <NavLink to="/admin">Admin Home</NavLink>
         </li>
         <li>
-          <NavLink to="/socials">Socials</NavLink>
-        </li>
-        <li>
-          <NavLink to="/events">Events </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login">Admin</NavLink>
+          <NavLink to="/" onClick={logout}>
+            Logout
+          </NavLink>
         </li>
       </ul>
     </nav>
   );
 };
 
-export default Navbar;
+export default AdminNavbar;

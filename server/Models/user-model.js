@@ -3,11 +3,14 @@ const mongoose = require("mongoose");
 const clubMember = new mongoose.Schema(
   {
     UID: String,
-    name: String,
-    major: String,
-    gradDate: String,
-    clubName: String,
-    qrcodeURL: String,
+    f_name: { type: String, default: "" },
+    surname: { type: String, default: "" },
+    email: { type: String, default: "" },
+    NID: { type: String, default: "" },
+    Gender: { type: String, default: "" },
+    major: { type: String, default: "" },
+    classStanding: { type: String, default: "" },
+    paidDues: Boolean,
     customQ: [
       {
         question: String,

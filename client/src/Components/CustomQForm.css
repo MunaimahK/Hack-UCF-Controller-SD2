@@ -1,0 +1,38 @@
+#add-q-wrapper {
+  display: grid;
+  place-items: center;
+  height: 8em;
+}
+
+#l #i {
+  display: table-cell;
+}
+
+#h1-d {
+  padding-top: 0vh;
+  list-style-type: none;
+  text-align: center;
+}
+.dynamic-output-q {
+  align-items: center;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: rgb(210, 172, 3);
+
+  color: black;
+}
+
+.remove {
+  background-color: white;
+  border-radius: 8px;
+  border: none;
+}
+.remove:hover {
+  background-color: rgb(67, 50, 0);
+  border-radius: 8px;
+  border: none;
+  color: white;
+}

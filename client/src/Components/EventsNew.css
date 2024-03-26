@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Raleway&display=swap");
+
+.events-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.event-box {
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 15px;
+  background-color: rgb(243, 244, 240);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.event-details {
+  padding: 20px;
+}
+
+.event-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.event-date {
+  font-size: 16px;
+  color: rgb(55, 19, 84);
+  margin-bottom: 5px;
+}
+
+.event-description {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  line-height: 1.5;
+}
+
+.rsvp-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rsvp-yes,
+.rsvp-no {
+  margin: 0 10px;
+  padding: 8px 16px;
+  background-color: rgb(55, 19, 84);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rsvp-yes:hover,
+.rsvp-no:hover {
+  background-color: rgb(159, 134, 188);
+}

@@ -1,18 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
 #bg {
-  /*background: radial-gradient( ellipse at center, rgb(199, 147, 244), rgb(115, 80, 161), rgb(55, 19, 84) );*/
+  background: linear-gradient(
+    0deg,
+    rgb(178, 134, 1),
+    rgb(187, 141, 3),
+    rgb(255, 204, 0)
+  ); /*
   background: linear-gradient(
     150deg,
-    rgb(248, 243, 253) 10.9%,
-    rgb(223, 207, 255) 27.8%,
-    rgb(159, 134, 188) 101.7%
-  );
+    rgb(44, 35, 0) 10.9%,
+    rgb(14, 11, 0) 27.8%,
+    rgb(0, 0, 0) 101.7%
+  );*/
+
   width: 100%;
   height: 100vh;
   font-family: "Nanum Gothic Coding", monospace;
   font-family: "Raleway", sans-serif;
-  align-items: center;
 }
 
 .form-div {

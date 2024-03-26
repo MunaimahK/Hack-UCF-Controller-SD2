@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/userContext";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import AdminNavbar from "./AdminNavbar";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -19,11 +20,11 @@ const Admin = () => {
   };
   const attendance = async (e) => {
     e.preventDefault();
-    navigate("/attendance");
+    navigate("http://localhost:3003/attendance");
   };
   const dues = async (e) => {
     e.preventDefault();
-    navigate("/dues");
+    window.location.replace("http://localhost:3003/dues");
   };
   const QForm = async (e) => {
     e.preventDefault();
@@ -49,7 +50,7 @@ const Admin = () => {
   };
   return (
     <div id="main">
-      <Navbar />
+      <AdminNavbar />
       <div className="welcome">{!!user && <h1>Hi {user.username}!</h1>}</div>
       <div className="features">
         <br></br>

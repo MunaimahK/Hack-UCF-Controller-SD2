@@ -7,41 +7,40 @@ import { useState, useEffect } from "react";
 import "./Members.css";
 import AdminNavbar from "./AdminNavbar";
 
-const Members = () => {
+const DuesPayingMembers = () => {
   // fetch users from DB via backend API endpoint /member/details
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
   const event = useEffect(() => {
     axios
-      .get("http://localhost:8001/member/details")
+      .get("http://localhost:8001/paying-dues-members")
       .then((users) => setUsers(users.data))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log("ERR IN USE:", err));
   }, []);
 
   const searchMember = (e) => {
     e.preventDefault();
     console.log("test search");
     const newSearchByName = users.filter((user) =>
-      user.name.toLowerCase().includes(search.toLowerCase())
+      user.f_name.toLowerCase().includes(search.toLowerCase())
     );
     if (newSearchByName) {
       console.log(newSearchByName);
       setUsers(newSearchByName);
-    } else {
-      const newSearchByUID = users.filter((user) =>
-        user.UID.toLowerCase().includes(search.toLowerCase())
-      );
-      if (newSearchByUID) {
-        console.log("SEARCH BY UID:", newSearchByUID);
-        setUsers(newSearchByUID);
-        // setUsers(users);
-      }
+    }
+    const newSearchByUID = users.filter((user) =>
+      user.UID.toLowerCase().includes(search.toLowerCase())
+    );
+    if (newSearchByUID) {
+      console.log(newSearchByUID);
+      setUsers(newSearchByUID);
+      // setUsers(users);
     }
   };
 
   const resetSearch = (e) => {
     e.preventDefault();
-    window.location.replace("http://localhost:3003/member/details");
+    window.location.replace("http://localhost:3003/dues");
   };
   return (
     // return retrieved data and display as a table
@@ -50,6 +49,7 @@ const Members = () => {
       <div>
         {
           <div className="users-table">
+            <h1>Dues Paying Members</h1>
             <p>
               Your Total Contacts: <strong>{users.length}</strong>
             </p>
@@ -79,23 +79,20 @@ const Members = () => {
             <table>
               <thead>
                 <tr>
+                  <th>NID</th>
                   <th>First Name</th>
                   <th>Surname</th>
-                  <th>Major</th>
+
                   <th>Email</th>
-                  <th>NID</th>
-                  <th>Class Standing</th>
                 </tr>
               </thead>
               <tbody>
                 {users.map((user) => (
                   <tr key={user.id}>
+                    <td>{user.NID}</td>
                     <td>{user.f_name}</td>
                     <td>{user.surname}</td>
-                    <td>{user.major}</td>
                     <td>{user.email}</td>
-                    <td>{user.NID}</td>
-                    <td>{user.classStanding}</td>
                   </tr>
                 ))}
               </tbody>
@@ -107,4 +104,4 @@ const Members = () => {
   );
 };
 
-export default Members;
+export default DuesPayingMembers;
